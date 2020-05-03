@@ -1,0 +1,12 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: hystrix-turbine-dashboard
+  cloud:    consul:
+      host: localhost
+      port: 8500
+      discovery:        instance-id: ${spring.application.name}:${server.port}
+        service-name: ${spring.application.name}
+

@@ -1,0 +1,10 @@
+server:
+  port: 9002
+
+spring:  application:    name: sleuth-zipkin
+  cloud:    consul:      host: localhost
+      port: 8500
+      discovery:        instance-id: ${spring.application.name}
+        service-name: ${spring.application.name}
+        
+management:  metrics:    web:      server:        auto-time-requests: false

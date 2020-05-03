@@ -1,0 +1,6 @@
+server:
+  port: 8006
+    
+zuul:  routes:    consul-consume:
+      path: /consume/**
+      service-id: consul-consume

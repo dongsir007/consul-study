@@ -1,0 +1,6 @@
+server:  port: 9401  
+spring:
+  data:
+    elasticsearch:
+      cluster-name: myes
+      cluster-nodes: 127.0.0.1:9300  jackson:    default-property-inclusion: non-null      index-entity:  configs:    - docCode: store      indexName: store      type: base      documentPath: com.dosth.consul.es.kibana.document.StoreDocument       

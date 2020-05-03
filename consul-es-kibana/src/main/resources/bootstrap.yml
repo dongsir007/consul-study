@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: consul-es-kibana
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true # 使用ip注册服务
+        service-name: ${spring.application.name}
+        register: true # 设置注册到consul
+      config:
+        enabled: true
+        format: YAML
+        prefix: config
+        default-context: ${spring.application.name}
+        profile-separator: ','
+        data-key: data
+        watch:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'   # hystrix.stream

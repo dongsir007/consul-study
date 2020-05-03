@@ -1,0 +1,12 @@
+server:
+  port: 4002
+
+spring:  rabbitmq:    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:    stream:      bindings:        input:
+          destination: myExchange
+          content-type: application/json
+          

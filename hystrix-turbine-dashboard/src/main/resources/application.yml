@@ -1,0 +1,2 @@
+turbine:  aggregator:    cluster-config: default
+  cluster-name-expression: new String("default")  app-config: consul-consumer

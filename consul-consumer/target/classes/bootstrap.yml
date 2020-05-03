@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: consul-consumer
+  sleuth:
+    web:
+      client:
+        enabled: true
+      sampler:
+        probability: 1.0 # 采样比例
+  zipkin:
+    base-url: http://localhost:9002 # zipkin服务器地址
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true # 使用ip注册服务
+        service-name: ${spring.application.name}
+        register: true # 设置注册到consul
+      config:
+        enabled: true
+        format: YAML
+        prefix: config
+        default-context: ${spring.application.name}
+        profile-separator: ','
+        data-key: data
+        watch:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'   # hystrix.stream

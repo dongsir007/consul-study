@@ -1,0 +1,5 @@
+spring:  profiles:    active:    - consul-provider1---
+server:  port: 2001
+spring:  profiles: consul-provider1say: hello 
+---
+server:  port: 2002spring:  profiles: consul-provider2say: hi
